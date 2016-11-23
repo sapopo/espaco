@@ -1,0 +1,79 @@
+
+h2 {
+	color: red;
+	text-align: center;
+	border: 2px solid brown;
+    height: 45px;
+    padding-top: 6px;
+}
+.title input, .date input  {
+	margin-left: 14px;
+}
+select {
+	margin-left: 11px
+}
+.multimedia input {
+	display: inline;
+}
+
+.info {
+	padding-top: 80px;
+}
+
+button {
+	    left: 494px;
+    position: relative;
+    top: 35px;
+}
+.espaco-footer {
+    background-color: #F0E6E4;
+    height: 150px;
+    padding-top: 40px;
+    margin-top: 540px;
+}
+
+.footer-content, .social-media, .social-media-label, .social-media-links {
+    padding: 0;
+    color: #964C36;
+}
+
+.social-media-label{
+    text-align: right;
+    margin: 0;
+    font-family: raleway;
+    font-weight: 600;  
+}
+
+.newsletter{
+    margin-bottom: 20px;
+}
+
+.the-anchor{
+    margin-left: -15px;
+    color: #964C36;
+}
+
+.social-media-links{
+    text-align: right;
+    padding-right: 8%;
+}
+
+.social-media-links img{
+    float: right;
+    height:20px;
+    padding-left: 10px;
+}
+
+.social-media{
+    font-family: Raleway;
+}
+
+.copyright-div{
+    font-family: Raleway;
+    margin-top: 20px;
+    padding: 0;
+    padding-right: 8%;
+    color: #964C36;
+    font-size: 10px;
+    text-align: right;
+}

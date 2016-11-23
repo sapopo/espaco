@@ -1,0 +1,2322 @@
+/*******************************************************************************
+ *                    Fonts to be used in this project                         *
+ *******************************************************************************/
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway:100,200i,200,300,400i,400,500,500i,600,700,800,900';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700';
+
+/*              Example                   
+    
+*/
+
+/* INDEX [Crl+G To Find The Line]
+________________________________________________________________________________
+|
+| 1. Global Styles 
+|
+| 2. Navbar
+|
+| 2.1. Navbar - When the menu is centered
+|
+| 2.2. Navbar - Side menu for mobile
+|
+| 2.3 Navbar Styling [Look and fee] + Changing affix 
+|    (Also look in assets/js/script)
+|
+| 3. Main Page with the background-Image
+|
+| 4. Main Page Content
+|
+| 5. Heading [Um espaço a visitar]
+|
+| 6. Blocks, all the images included in the main view
+|
+| 6.2 The <div> that display the mobile images
+|
+| 6.3 The <div> that controls the background-images
+|
+| 6.4 Mobile view of the blocks
+|
+| 7. Section for media, starting with the <hr> line :)
+|
+| 8. The banner that divides the section
+|
+| 9. Here is Contact Us/Make appointment
+|
+| 10. Google maps is here
+|
+| 11. Icons after the map
+|
+| 12. The Footer
+|_______________________________________________________________________________*/
+
+/* 1. Global Styles
+--------------------------------------------------------------------------------*/
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    outline: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 0 0 0;
+}
+
+.section {
+    background-color: #f2f4f4;
+}
+
+.section > .section-inner {
+    position: relative;
+}
+
+.section > .section-inner .section-content {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+    .section > .section-inner .section-content {
+        padding-top: 70px;
+        padding-bottom: 80px;
+        }
+}
+    .section > .section-inner .section-content .section-title {
+        color: #222;
+        text-transform: uppercase;
+        padding-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+    .section > .section-inner .section-content .section-title {
+        padding-bottom: 60px;
+    }
+}
+
+.section > .section-inner .section-content .section-title > .main-title {
+  font-size: 35px;
+  font-weight: 300;
+}
+
+@media (min-width: 480px) {
+.section > .section-inner .section-content .section-title > .main-title {
+    font-size: 45px;
+    }
+}
+
+@media (min-width: 600px) {
+.section > .section-inner .section-content .section-title > .main-title {
+    font-size: 55px;
+    }
+}
+
+@media (min-width: 768px) {
+    .section > .section-inner .section-content .section-title > .main-title {
+        font-size: 60px;
+    }
+}
+
+.section > .section-inner .section-content .section-title > .sub-title {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+@media (min-width: 480px) {
+    .section > .section-inner .section-content .section-title > .sub-title {
+        font-size: 25px;
+    }
+}
+
+.section > .section-inner .section-content .section-line {
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    background-color: #222;
+}
+
+.section.section-bgimage-yes {
+    background-color: #222;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media (min-width: 1280px) {
+    .section.section-bgimage-yes {
+        background-attachment: fixed;
+    }
+}
+
+.section.section-bgimage-yes > .section-inner > .section-overlay {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    zoom: 1;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+}
+
+.section.section-parallax-yes > .section-inner > .section-overlay {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    zoom: 1;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
+}
+
+.section.section-parallax-yes > .section-inner > .parallax .bcg {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media (min-width: 1280px) {
+    .section.section-parallax-yes > .section-inner > .parallax .bcg {
+        background-attachment: fixed;
+    }
+}
+
+/* 2. Navbar
+--------------------------------------------------------------------------------*/
+.navbar.navbar-fixed-top {
+    position: relative;
+    margin: 0;
+    border: 0;
+    min-height: 60px;
+    background-color: #222;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.2);
+    z-index: 1030 !important;
+}
+
+@media (min-width: 768px) {
+    .navbar.navbar-fixed-top {
+    -webkit-transition: background 0.2s ease-in-out, padding 0.3s ease-in-out;
+    -moz-transition: background 0.2s ease-in-out, padding 0.3s ease-in-out;
+    transition: background 0.2s ease-in-out, padding 0.3s ease-in-out;
+    }
+}
+
+.navbar.navbar-fixed-top .navbar-brand {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 60px;
+    line-height: 60px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    letter-spacing: 0.1em;
+}
+
+.navbar.navbar-fixed-top .navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar.navbar-fixed-top .navbar-toggle {
+    margin-top: 12px;
+    background-color: #1abc9c;
+    display: block;
+}
+
+.navbar.navbar-fixed-top .navbar-nav > li > a {
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top .navbar-nav > li > a {
+    height: 60px;
+    line-height: 60px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+.navbar.navbar-fixed-top .navbar-nav > li > a:hover {
+  color: #1abc9c;
+  background-color: #222;
+}
+
+.navbar.navbar-fixed-top .navbar-nav > li > a > i.fa-angle-down {
+  padding-left: 2px;
+}
+
+.navbar.navbar-fixed-top .navbar-nav > li.active a,
+.navbar.navbar-fixed-top .navbar-nav > li.active a:hover {
+  background-color: #1abc9c;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top .navbar-nav > li.active a,
+    .navbar.navbar-fixed-top .navbar-nav > li.active a:hover {
+    color: #fff;
+    background-color: #1abc9c;
+    background-repeat: repeat;
+    }
+}
+
+
+/* 2.1. Navbar - When the menu is centered
+--------------------------------------------------------------------------------*/
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.center-menu .navbar-nav {
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.center-menu .navbar-nav > li {
+        display: inline-block;
+        float: none;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+/* 2.2. Navbar - Side menu for mobile
+--------------------------------------------------------------------------------*/
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu {
+        z-index: 15;
+        position: fixed;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #222;
+        box-shadow: none;
+        -webkit-transition: all 0.2s ease 0s;
+        -moz-transition: all 0.2s ease 0s;
+        -ms-transition: all 0.2s ease 0s;
+        -o-transition: all 0.2s ease 0s;
+        transition: all 0.2s ease 0s;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .container {
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .navbar-header {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .navbar-header .navbar-brand {
+        color: #aaa;
+        float: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #aaa;
+        border-radius: 2px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .navbar-nav {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .navbar-nav > li {
+        float: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu .navbar-nav > li > a {
+        color: #aaa;
+        height: 42px;
+        line-height: 42px;
+        padding: 0px 30px;
+    }
+
+    .navbar.navbar-fixed-top.side-menu .navbar-nav > li > a:hover {
+        color: #fff;
+    }
+}
+
+.navbar.navbar-fixed-top.side-menu .navbar-nav > li.active > a {
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu.left-slide-menu,
+    .navbar.navbar-fixed-top.side-menu.left-push-menu {
+        left: -250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu.left-slide-menu.active,
+    .navbar.navbar-fixed-top.side-menu.left-push-menu.active {
+        left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu.right-slide-menu,
+    .navbar.navbar-fixed-top.side-menu.right-push-menu {
+        right: -250px;
+        left: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar.navbar-fixed-top.side-menu.right-slide-menu.active,
+    .navbar.navbar-fixed-top.side-menu.right-push-menu.active {
+        right: 0;
+    }
+}
+
+.navbar-trigger-open {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    margin-top: 25px;
+}
+
+.navbar-trigger-open a {
+    color: #fff;
+    font-size: 28px;
+    background-color: #1abc9c;
+    padding: 5px 15px;
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+.navbar-trigger-open.left {
+    left: 0;
+    margin-left: 20px;
+}
+
+.navbar-trigger-open.right {
+    right: 0;
+    margin-right: 20px;
+}
+
+span.navbar-trigger-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 25px;
+    margin-top: 28px;
+}
+
+span.navbar-trigger-close a {
+    color: #aaa;
+    font-size: 28px;
+}
+
+span.navbar-trigger-close a:hover {
+    color: #fff;
+}
+
+.navbar-header {
+    padding-top: 15px;
+}
+
+/* 2.3 Navbar Styling [Look and feel] + Changing affix 
+(Also look in assets/js/script) 
+--------------------------------------------------------------------------------*/
+.affix {
+    top: 0;
+    min-width: 100%;
+  }
+.height-of-nav {
+    height: 80px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.affix + .container-fluid {
+    padding-top: 70px;
+    top: 0;
+}
+
+.size-off-the-navbar {
+    position: relative;
+    padding-top: 15px;
+    height: 80px;
+    text-align: center;
+    opacity: 0.8;
+    bottom: 96px;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.size-off-the-navbar .navbar {
+    border-radius: 0px;
+    border-color: #f8f8f8;
+}
+
+.size-off-the-navbar .nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-family: 'Raleway';
+    color: #964c36;
+    padding-left: 35px;
+    padding-top: 30px;
+}
+
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form  {
+    background-color: #f8f8f8;
+    border-color: #f8f8f8;
+}
+
+/*  3. Main Page with the background-Image
+--------------------------------------------------------------------------------*/
+
+/*.espaco-reduce {
+    padding-top: 20px;
+}*/
+#intro:before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    #intro {
+        padding: 0px;
+        height: 100%;
+    }
+}
+
+#intro .parallax {
+    width: 100%;
+    height: 100%;
+}
+
+#intro .parallax > .bcg {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/main-site/main_image_smaller.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media (min-width: 1280px) {
+    #intro .parallax > .bcg {
+        background-attachment: fixed;
+    }
+}
+
+/* 4. Main Page Content
+--------------------------------------------------------------------------------*/
+
+#intro .intro-body {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.intro-content {
+    padding: 0px 0px 10%;
+}
+
+@media (min-width: 1280px) {
+    #intro .intro-body {
+        padding-top: 75px;
+        padding-bottom: 20px;
+    }
+}
+
+.next-page a {
+    float: right;
+    color: grey;
+    text-decoration: underline;
+}
+
+.next-page a:hover {
+    color: red;
+}
+/* 4.1  Main Page Logo 
+--------------------------------------------------------------------------------*/
+
+#intro .intro-body .logo {
+    display: block;
+    width: 130px;
+    height: 110px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: auto;
+}
+
+/* 4.2 Text After the Logo
+--------------------------------------------------------------------------------*/
+/*.place-to-visit, .heading-content {
+    padding-left: 0;
+    padding-right: 0;
+}*/
+
+
+#intro .intro-body .intro-text {
+    font-family: 'Raleway';
+    margin-top: 180px;
+}
+
+#intro .intro-body .intro-text h2 {
+    color: #fff;
+    font-size: 40px;
+    font-family: 'Playfair Display';
+    margin-bottom: 3px;
+}
+
+#intro .intro-body .intro-text h2:first {
+    font-weight: 200;
+}
+
+#intro .intro-body .intro-text h2:nth-child(2) {
+    font-weight: 700;
+}
+
+.line-between-content {
+    border: 2px solid white;
+    width: 11%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+@media (max-width: 991px) {
+    #intro .intro-body .intro-text {
+        margin-top: 50px;
+    }
+}
+
+.espaco-paragraph p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 100;
+    max-width: 834px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4.3 The Button In The Main Page
+--------------------------------------------------------------------------------*/
+
+#intro .intro-body .page-scroll {
+    margin-top: 30px;
+}
+
+.page-scroll a {
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 0px;
+    color: white;
+}
+
+.page-scroll a:visited {
+    text-decoration: none;
+}
+
+.hover-button {
+    background-color: white;
+    color: black;
+}
+
+@media (min-width: 690px) and (max-width: 891px) {/*---------------------------------To be Copied later on--------------------
+                                                    --------------------------------------------------------------------------*/
+    #intro .intro-body .page-scroll {
+        margin-top: 30px;
+    }
+}
+
+.read-more {
+    position: absolute;
+    color: white;
+    width: 100%;
+}
+
+.read-more p {
+    font-family: 'Raleway';
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.read-more .fa-chevron-down {
+    color: white;
+    font-size:14px;
+}
+
+#intro .intro-body .page-scroll a.btn {
+  font-family: 'Raleway';
+  font-size: 16px;
+  padding: 7px 30px 7px 30px;
+  text-decoration: none;
+}
+
+.read-more {
+    /* display: none; */
+    bottom: 104px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+}
+
+@media (min-width: 1152px) {
+    #intro .intro-body .page-scroll {
+        margin-top: 7%;
+    }
+}
+
+/* 4.4 Setting the home screen full on every screen size ;) I Think 
+--------------------------------------------------------------------------------*/
+@media only screen and (min-height: 899px) and (max-height: 1440px) {
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+    .read-more {
+        display: none;
+        bottom: 10px;
+        left: 0;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        color: white;
+        font-weight: 400;
+}
+
+}
+
+@media only screen and (min-height: 599px) and (max-height: 900px) {
+    .read-more {
+        display: unset;
+        display: block;
+        
+    }
+    .page-scroll {
+        visibility: hidden;
+    }
+}
+
+@media (max-height: 773px){
+    .espaco-paragraph {
+        visibility: hidden;
+    }
+}
+@media (max-height: 659px) {
+    .line-between-content {
+        visibility: hidden;
+    }
+}
+@media (max-height: 610px) {
+    #height-visibility {
+        visibility: hidden;
+    }
+}
+/*------------------------------------------------------------------------------
+At 700px fix the title and the see more text and float them!
+--------------------------------------------------------------------------------*/
+
+/* 5. Heading [Um espaço a visitar]
+--------------------------------------------------------------------------------*/
+
+.heading-before-gallery {
+    color: #964C36;
+    padding: 0 0 0 0;
+}
+
+.heading-circle-lines-left,
+.heading-circle-lines-right {
+    border-bottom: 2px solid #964C36;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.heading-circle-lines-left:before {
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    height:10px;
+    width:10px;
+    background:#964C36;
+    content:"";
+    border-radius:5px;
+}
+
+.heading-circle-lines-right:after  {
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    height:10px;
+    width:10px;
+    background:#964C36;
+    content:"";
+    border-radius:5px;
+}
+
+.heading-circle-lines-left:after,
+.heading-circle-lines-right:after {
+        right:0; 
+        left:auto;
+    }
+
+.left-circle-line hr,
+.right-circle-line hr {
+    border-top: none;
+    margin-right: 0px;
+    margin-left: 0px;
+    
+}
+
+/** The style imported from the page as inline style to the external page**/
+.copyright-div label {
+    font-weight: 300;
+}
+
+.place-to-visit h2 {
+    font-size: 22px;
+}
+
+.media-content-section h4 {
+    font-family: Raleway;
+    color: #964c36;
+}
+
+.media-content-section p {
+    font-family: Raleway;
+    color: #000000;
+}
+/** Ending of the style imported from the page as inline style to the external page**/
+
+
+/** The new media query for the responsiveness of the 'Nao Ocupa espaco ' fieldset**/
+
+@media (max-width: 353px) {
+.legendary-circle-left{
+    margin-left: -131px !important;
+    margin-top: 120px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 355px) {
+.legendary-circle-left{
+    margin-left: -131px !important;
+    margin-top: 120px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 356px) {
+.legendary-circle-left{
+    margin-left: -130px !important;
+    margin-top: 120px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 358px) {
+.legendary-circle-left{
+    margin-left: -132px !important;
+    margin-top: 120px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 359px) {
+.legendary-circle-left{
+    margin-left: -128px !important;
+    margin-top: 122px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 360px) {
+.legendary-circle-left{
+    margin-left: -126px !important;
+    margin-top: 123px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 361px) {
+.legendary-circle-left{
+    margin-left: -124px !important;
+    margin-top: 124px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 362px) {
+.legendary-circle-left{
+    margin-left: -122px !important;
+    margin-top: 125px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 363px) {
+.legendary-circle-left{
+    margin-left: -120px !important;
+    margin-top: 126px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 364px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 365px) {
+.legendary-circle-left{
+    margin-left: -116px !important;
+    margin-top: 128px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 366px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 367px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 368px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 369px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 370px) {
+
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 371px) {
+
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 384px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 385px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 386px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 387px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 388px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 389px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 390px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 391px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 392px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 393px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 394px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 395px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 396px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 397px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 398px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 399px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 400px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 401px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+@media (max-width: 402px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+@media (max-width: 403px) {
+.legendary-circle-left{
+    margin-left: -118px !important;
+    margin-top: 127px !important; 
+}
+.legendary-circle-right{
+    margin-left: 192px;
+    margin-top: 120px !important;
+}
+.legendary-fieldset label{
+    font-size: 33px !important; 
+    }
+ 
+}
+
+
+/*--------------------scrolloff style for testing--------------*/
+
+.scrolloff {
+    pointer-events: none;
+}
+
+/** The closing media query for the responsiveness of the 'Nao Ocupa espaco ' fieldset**/
+
+
+/*---------------------Test Media Query for the first phase of my work---------------*/
+/*****************************************************************************************
+*******************************************************************************************
+********************************************************************************************/
+
+/*-----This is the first section of media for the whole page including the footer-------*/
+
+@media (max-width: 768px) {
+.left-circle-line hr,
+.right-circle-line hr{
+    position: relative;
+    bottom: 49px;
+}
+
+.heading-circle-lines-left:before{
+    bottom: -4px;
+}
+
+.heading-circle-lines-right:after{
+    bottom: -4px;
+}
+
+.heading-circle-lines-left:before{
+    width: 7px;
+    height: 7px;
+}
+
+.heading-circle-lines-left:after, .heading-circle-lines-right:after{
+    width: 7px;
+    height: 7px;
+}
+
+.heading-circle-lines-left, .heading-circle-lines-right{
+    border: -1px;
+}
+
+.place-to-visit, .heading-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.place-to-visit h2{
+    font-size: 23px !important;
+    position: relative;
+    bottom: 37px;
+}
+
+.coming-soon p{
+    font-size: 12px;
+    position: relative;
+    bottom: 34px;
+}
+.heading-before-gallery{
+    padding-top: 0;
+    height: 0;
+}
+
+.container-espaco{
+    height: 0;
+}
+
+.displaying-img img{
+    padding-top: 35px;
+}
+
+.block-of-pictures{
+    padding-top: 50px !important;
+    padding-right: 16px;
+    padding-left: 15px;
+}
+
+.contact-numbers{
+    margin-bottom: 20px;
+}
+
+
+.business-location{
+    margin-bottom: 20px;
+}
+
+.contact-email{
+    margin-bottom: 20px;
+}
+
+.social-media-links{
+    margin: 0% 27% 0% 0%;
+}
+
+.copyright-div{
+    margin: 0px 69px 0 0;
+}
+
+.copyright-div label{
+    margin-top: 60px;
+}
+
+.contact-us form{
+    padding-top: 25px !important; 
+}
+
+
+.contact-us-container{
+    padding-top: 25px !important;
+}
+
+.interactive-media{
+    margin-top: 50px !important;
+}
+
+.hide-direction{
+    padding-top: 50px !important;
+    }
+
+.contact-information{
+    padding: 30px 0 10px 0 !important;
+} 
+
+.legendary-fieldset {
+    margin-top: inherit;
+}
+
+.legendary-fieldset fieldset{
+    margin-left: -60px;
+    margin-right: -80px;
+    margin-top: 30px;
+}
+
+.legendary-circle-right{
+    margin-top: 125px;
+    margin-right: 46px;
+}
+
+.legendary-circle-left{
+    margin-top: 125px;
+    margin-left: 65px;   
+}
+
+}
+
+
+/* ---------- A quick link for the Contact email underneath my google map-----*/
+.contact-email a{
+    color: black;
+}
+
+.contact-email a:hover{
+    color: #964C36;
+}
+
+
+
+
+/*--------------------- CLOSING for the Test Media Query for the first phase of my work---------------*/
+
+.place-to-visit h2{
+    font-family: Playfair Display;
+    font-weight: 600;
+    font-size: 45px;
+    text-align: center;
+
+}
+
+.coming-soon p {
+    font-family: Open Sans;
+    text-align: center;
+    font-weight: 100;
+}
+
+/* Tablet view */
+
+@media (max-width: 991px) {
+.coming-soon {
+        font-size: 15px;
+}
+
+.place-to-visit {
+     font-size: 35px;
+}
+
+.heading-circle-lines-left,
+.heading-circle-lines-right {
+    padding-bottom: 10px;
+    }
+}
+
+/* Mobile view or certain view */
+
+@media (max-width: 758px) {
+.coming-soon {
+    font-size: 15px;
+}
+
+.place-to-visit {
+    font-size: 30px;
+    }
+}
+
+/* 6. Blocks, all the images included in the main view
+--------------------------------------------------------------------------------*/
+
+.block-of-pictures {
+    padding-top: 70px;
+}
+
+.sm-large-img .hall-way {
+    background: url(../img/main-site/galery1.png) center center no-repeat;
+    min-height: 400px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-office {
+    background: url(../img/main-site/galery5.png) center center no-repeat;
+    background-size: cover;
+    min-height: 400px;
+}
+
+.sm-large-img .espaco-gallery {
+    background: url(../img/main-site/galery2.png) center center no-repeat;
+    min-height: 300px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-stand {
+    background: url(../img/main-site/galery3.png) center center no-repeat;
+    min-height: 200px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-lounge {
+    background: url(../img/main-site/galery4.png) center center no-repeat;
+    min-height: 514px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-waiting-room {
+    background: url(../img/main-site/galery6.png) center center no-repeat;
+    min-height: 600px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-soufa {
+    background: url(../img/main-site/galery7.png) center center no-repeat;
+    min-height: 314px;
+    background-size: cover;
+}
+
+.sm-large-img .espaco-modelling {
+    background: url(../img/main-site/galery8.png) center center no-repeat;
+    min-height: 314px;
+    background-size: cover;
+    padding: 0px;
+}
+
+/* 6.1 The <div> that hold the images
+--------------------------------------------------------------------------------*/
+
+.espaco-first-img,
+.espaco-forth-img,
+.espaco-fifth-img,
+.espaco-sixth-img {
+    padding: 0px;
+}
+
+.espaco-second-img {
+    padding: 0px 0px 15px 15px;
+}
+
+.espaco-third-img {
+    padding: 0px 0px 15px 0px;
+}
+
+.espaco-seventh-img {
+    padding-left: 0px;
+    padding-top: 15px;
+}
+
+.espaco-eighth-img {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 15px;
+}
+
+.column-of-img {
+    padding-left: 0px;
+}
+
+.column-of-img-2 {
+    padding-left: 0px;
+}
+
+.main-col-1 {
+    padding-right: 0px;
+}
+
+/* 6.2 The <div> that display the mobile images
+--------------------------------------------------------------------------------*/
+@media (max-width: 991px) {
+
+.small-screen-view .hall-way {
+    background: url(../img/tablet-view/galery1_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-office {
+    background: url(../img/tablet-view/galery5_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-gallery {
+    background: url(../img/tablet-view/galery2_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-stand {
+    background: url(../img/tablet-view/galery3_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+
+}
+
+.small-screen-view .espaco-lounge {
+    background: url(../img/tablet-view/galery4_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-waiting-room {
+    background: url(../img/tablet-view/galery6_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-soufa {
+    background: url(../img/tablet-view/galery7_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-modelling {
+    background: url(../img/tablet-view/galery8_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .hall-way {
+    background: url(../img/tablet-view/galery1_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-office{
+    background: url(../img/tablet-view/galery5_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-gallery {
+    background: url(../img/tablet-view/galery2_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-stand {
+    background: url(../img/tablet-view/galery3_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-lounge {
+    background: url(../img/tablet-view/galery4_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-waiting-room {
+    background: url(../img/tablet-view/galery6_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-soufa {
+    background: url(../img/tablet-view/galery7_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.small-screen-view .espaco-modelling {
+    background: url(../img/tablet-view/galery8_tablet.png) center center no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+/* 6.3 The <div> that controls the background-images
+--------------------------------------------------------------------------------*/
+
+.espaco-first-mobile {
+    padding: 0px 15px 15px 15px;
+}
+
+.espaco-second-mobile {
+    padding-right: 30px;
+    padding-left: 0px;
+}
+
+.espaco-third-mobile {
+    padding-right: 8px;
+}
+
+.espaco-forth-mobile {
+    padding-left: 7px;
+    padding-bottom: 15px;
+}
+
+.espaco-sixth-mobile {
+    padding-right: 8px;
+}
+
+.espaco-seventh-mobile {
+    padding-left: 7px;
+    }
+}
+
+@media (max-width: 992px) {
+.media-section-side {
+        border-right: 0px;
+    }
+}
+
+/* 6.4 Mobile view of the blocks
+--------------------------------------------------------------------------------*/
+
+@media (max-width: 767px) {
+.espaco-first-mobile {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 15px;
+}
+
+.espaco-second-mobile {
+    padding-left: 0px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.espaco-third-mobile {
+    padding-right: 0px;
+    padding-top: 15px;
+    padding-left: 0px;
+}
+
+.espaco-forth-mobile {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 15px;
+}
+
+.espaco-fifth-mobile {
+    padding-left: 0px;
+}
+
+.espaco-sixth-mobile {
+    padding-right: 0px;
+    padding-top: 15px;
+    padding-left: 0px;
+}
+
+.espaco-seventh-mobile {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 15px;
+}
+
+.espaco-eighth-mobile {
+    padding-right: 0px;
+    padding-top: 15px;
+    padding-left: 0px;
+    }
+}
+
+/* 7. Section for media, starting with the <hr> line :) 
+--------------------------------------------------------------------------------*/
+.line-of-division {
+    height: 1px;
+    background-color: black;
+    margin-bottom: 160px;
+}
+
+.interactive-media {
+    margin-bottom: 10%;
+    margin-top: 180px
+}
+
+#line {
+    border-right: 1px solid #964c36;
+}
+
+.media-content-section .name-of-author {
+    float: right;
+}
+
+.media-section-sides i{
+    font-size: 150px;
+    color: white;
+    position: relative;
+    bottom: 210px;
+    left: 170px;
+}
+
+.displaying-img img {
+    display: block;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+#line  {
+    border-right: none;
+}
+
+.media-content-section {
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+}
+
+/* 8. The banner that divides the section
+--------------------------------------------------------------------------------*/
+
+.position-of-bannertext {
+    margin-top: 15%;
+}
+
+.banner-bg {
+    background: url(../img/banner/banner2.png) center center no-repeat;
+    background-size: cover;
+    height: 450px;
+}
+
+.legendary-fieldset {
+    text-align: center;
+}
+
+.legendary-fieldset fieldset {
+    border: 2px solid white;
+    color: white;
+}
+
+.legendary-fieldset legend {
+    border-bottom: none;
+    width: inherit;
+    color: white;
+    margin-left: 45%;
+    font-family: 'Raleway';
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.legendary-fieldset label {
+    font-family: Playfair Display;
+    font-weight: 600;
+    font-size: 45px;
+    padding-bottom: 35px;
+    margin-bottom: 0;
+}
+
+.align-center legend {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px 25px 0px 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.legendary-circle-left {
+    position: relative;
+    top: -10px;
+    left: 352px;
+    right: -26px;
+    height: 10px;
+    width: 10px;
+    background: white;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+}
+
+.legendary-circle-right {
+    position: relative;
+    top: -10px;
+    right: 352px;
+    height: 10px;
+    width: 10px;
+    background: white;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 1199px) {
+.legendary-circle-left {
+    top: -9px;
+    left: 279px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+}
+
+.legendary-circle-right {
+    top: -9px;
+    right: 278px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 991px) {
+.legendary-circle-left {
+    top: -9px;
+    left: 195px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+    }
+
+.legendary-circle-right {
+    top: -9px;
+    right: 195px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+    }
+
+.position-of-bannertext {
+    margin-top: 21%;
+    }
+
+.legendary-fieldset label {
+    font-size: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+.legendary-circle-left {
+    top: -9px;
+    left: 195px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+}
+
+.legendary-circle-right {
+    top: -9px;
+    right: 195px;
+    content: "";
+    border-radius: 5px;
+    border-top-width: 0px;
+    margin-bottom: 0px;
+    }
+}
+
+/* 9. Here is Contact Us/Make appointment
+--------------------------------------------------------------------------------*/
+
+.contact-us-container {
+    padding-bottom: 25px;
+    padding-top: 180px;
+}
+
+.contact-us h2 {
+    color: #964C36;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: raleway;
+    font-weight: 200;
+}
+
+.contact-us p {
+    max-width: 485px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 200;
+    font-family: raleway;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.contact-us form {
+    font-family: 'Raleway';
+    margin: 0 auto; 
+    width: 474px;
+    padding-top: 80px;
+}
+
+.form-group label {
+    font-weight: 400;
+}
+
+.name,
+.email,
+.telephone,
+.message {
+    text-transform: uppercase;
+}
+
+.contact-us form input,
+.contact-us textarea {
+    width:100%;
+}
+
+.submit-button {
+    border: 1px solid #964C36;
+    text-align: center;
+    padding: 5px;
+    color: #964C36;
+    margin-top: 15px;
+}
+
+.submit-button:hover {
+    background-color: #964C36;
+    color: white;
+}
+
+.submit-button label {
+    margin: 0;
+}
+
+.hide-direction {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.hide-direction label {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #964C36;
+}
+
+.name-input,
+.email-input,
+.telephone-input,
+.message-textarea {
+    padding-bottom: 15px;
+}
+input[type=text], textarea, input[type=text]:hover, textarea:hover{
+    border: 1px solid #999;
+    /*border-color: ;*/
+    outline: none;
+}
+
+input[type=text]:focus, textarea:focus{
+    border: 1px solid;
+    outline: none;
+}
+
+.form-group label {
+    margin: 0;
+}
+
+.hide-direction label,
+.submit-button,
+.submit-button label {
+    cursor: pointer;
+}
+
+.googlemap-hide {
+    display: none;
+    transition:all 1s;
+}
+
+.show-option {
+    display: block;
+}
+
+@media (max-width: 767px){
+    .contact-us form {
+        width: 100%;
+    }
+
+}
+
+/* 10. Google maps is here
+--------------------------------------------------------------------------------*/
+.google-maps iframe {
+    width:100%;
+    height:500px;
+    margin: 0 auto 0 auto;
+}
+
+/* 11. Icons after the map
+--------------------------------------------------------------------------------*/
+
+.contact-numbers img,
+.contact-email img,
+.business-location img {
+    height: 25px;
+}
+
+.contact-numbers label,
+.contact-email label,
+.business-location label {
+    padding-top: 10px;
+}
+.contact-information {
+    padding: 70px 0 70px 0;
+    text-align: center;
+}
+
+.contact-information label {
+    max-width: 190px;
+    font-weight: 300;
+}
+
+.contact-numbers {
+    font-family: sans-serif;
+}
+
+/* 12. The Footer
+--------------------------------------------------------------------------------*/
+
+.espaco-footer {
+    background-color: #F0E6E4;
+    height: 150px;
+    padding-top: 40px;
+}
+
+.footer-content, .social-media, .social-media-label, .social-media-links {
+    padding: 0;
+    color: #964C36;
+}
+
+.social-media-label{
+    text-align: right;
+    margin: 0;
+    font-family: raleway;
+    font-weight: 600;  
+}
+
+.newsletter{
+    margin-bottom: 20px;
+}
+
+.the-anchor{
+    margin-left: -15px;
+    color: #964C36;
+}
+
+.social-media-links{
+    text-align: right;
+    padding-right: 8%;
+}
+
+.social-media-links img{
+    float: right;
+    height:20px;
+    padding-left: 10px;
+}
+
+.social-media{
+    font-family: Raleway;
+}
+
+.copyright-div{
+    font-family: Raleway;
+    margin-top: 20px;
+    padding: 0;
+    padding-right: 8%;
+    color: #964C36;
+    font-size: 10px;
+    text-align: right;
+}
+/* 13
+-------------------------------------------------------------------------------*/
